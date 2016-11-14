@@ -1,7 +1,14 @@
+.document
+.editorconfig
+.rdoc_options
 .simplecov
 ChangeLog
+History.md
+LICENSE.txt
+Manifest.txt
 README.md
 Rakefile
 lib/thingfish/processor/image.rb
-spec/thingfish/processor/image_spec.rb
+spec/data/skunks.jpg
 spec/spec_helper.rb
+spec/thingfish/processor/image_spec.rb
