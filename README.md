@@ -15,17 +15,43 @@ docs
 
 ## Description
 
+This is a basic image-processor plugin for the Thingfish digital asset manager.
+It extracts image-related metadata from uploaded media files, and generates one
+or more thumbnail images as related resources.
 
 
+## Authors
 
-## Prerequisites
-
-* Ruby
+* Michael Granger <ged@FaerieMUD.org>
 
 
 ## Installation
 
+This plugin relies on [ImageMagick](http://www.imagemagick.org/), so you'll
+need to have that installed as well as any `-dev` dependencies appropriate for
+your system.
+
+One you've done that:
+
     $ gem install thingfish-processor-image
+
+
+##  Usage
+
+As with Thingfish itself, this plugin uses
+Configurability[https://rubygems.org/gems/configurability] to modify default
+behaviors.
+
+Here's an example configuration file that enables this plugin.
+
+    --
+    thingfish:
+      processors:
+        - image
+    
+    images:
+      thumbnail_dimensions: 150x150
+
 
 
 ## Contributing

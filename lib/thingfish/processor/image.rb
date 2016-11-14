@@ -18,7 +18,7 @@ class Thingfish::Processor::Image < Thingfish::Processor
 
 
 	# Package version
-	VERSION = '0.0.1'
+	VERSION = '0.1.0'
 
 	# Version control revision
 	REVISION = %q$Revision$

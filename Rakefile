@@ -17,9 +17,15 @@ Hoe.plugins.delete :rubyforge
 Hoe.plugins.delete :gemcutter # Remove for public gems
 
 hoespec = Hoe.spec 'thingfish-processor-image' do |spec|
-
 	spec.readme_file = 'README.md'
 	spec.history_file = 'History.md'
+	spec.extra_rdoc_files = FileList[ '*.rdoc', '*.md' ]
+	spec.urls = {
+		home:   'https://bitbucket.org/ged/thingfish-processor-image',
+		code:   'https://bitbucket.org/ged/thingfish-processor-image',
+		docs:   'https://deveiate.org/code/thingfish-processor-image',
+		github: 'https://github.com/ged/thingfish-processor-image',
+	}
 
 	spec.extra_rdoc_files = FileList[ '*.rdoc', '*.md' ]
 	spec.license 'BSD-3-Clause'
