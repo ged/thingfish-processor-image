@@ -54,6 +54,15 @@ describe Thingfish::Processor::Image, :db do
 	end
 
 
+	it "continues if ImageMagick processing is aborted" do
+		req = factory.post( '/tf', fixture_data('skunks.jpg'), 'Content-type' => 'image/jpeg' )
+
+		expect( Magick::ImageList ).to receive( :new ).and_raise( Magick::ImageMagickError.new )
+		processor.process_request( req )
+
+		expect( req.related_resources ).to be_empty
+	end
+
 	it "extracts IPTC metadata from uploaded images"
 
 end

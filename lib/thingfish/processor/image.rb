@@ -110,8 +110,10 @@ class Thingfish::Processor::Image < Thingfish::Processor
 					self.log.debug "  making a single image from a StringIO"
 					Magick::Image.from_blob( request.body.read )
 				else
-					self.log.debug "  making a flattened image out of %p" % [ request.body.path ]
-					list = Magick::ImageList.new( request.body.path )
+					path = request.body.path
+					self.log.debug "  making a flattened image out of %p" % [ path ]
+					path = path.to_s + '[0]' # ImageMagick, read a single frame
+					list = Magick::ImageList.new( path )
 					list.flatten_images
 				end
 
@@ -128,7 +130,13 @@ class Thingfish::Processor::Image < Thingfish::Processor
 		end
 
 		self.log.debug "  destroying the image to free up memory"
-		image.destroy!
+
+	rescue Magick::ImageMagickError => err
+		self.log.error "Problem while processing file %p: %s" % [ err.class, err.message ]
+		self.log.debug { err.backtrace.join( "\n  " ) }
+
+	ensure
+		image.destroy! if image
 	end
 
 
