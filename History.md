@@ -1,4 +1,4 @@
-## v0.1.0 [YYYY-MM-DD] Michael Granger <ged@FaerieMUD.org>
+## v0.1.0 [2016-11-16] Michael Granger <ged@FaerieMUD.org>
 
 Initial release.
 
