@@ -31,8 +31,7 @@ hoespec = Hoe.spec 'thingfish-processor-image' do |spec|
 
 	spec.developer 'Michael Granger', 'ged@FaerieMUD.org'
 
-	spec.dependency 'mongrel2',    '>= 0.46'
-	spec.dependency 'thingfish',   '~> 0.5'
+	spec.dependency 'thingfish',   '~> 0.6'
 	spec.dependency 'loggability', '~> 0.11'
 	spec.dependency 'rmagick',     '~> 2.16'
 

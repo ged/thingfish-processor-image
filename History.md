@@ -1,3 +1,9 @@
+## v0.2.1 [2016-11-16] Mahlon E. Smith <mahlon@martini.nu>
+
+Bugfix: Default configured value now is processed correctly by
+configurability.
+
+
 ## v0.2.0 [2016-11-16] Mahlon E. Smith <mahlon@martini.nu>
 
 Update for Configurability 3.x.

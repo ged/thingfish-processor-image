@@ -18,7 +18,7 @@ class Thingfish::Processor::Image < Thingfish::Processor
 
 
 	# Package version
-	VERSION = '0.2.0'
+	VERSION = '0.2.1'
 
 	# Version control revision
 	REVISION = %q$Revision$
@@ -31,7 +31,7 @@ class Thingfish::Processor::Image < Thingfish::Processor
 	configurability( 'thingfish.image_processor' ) do
 
 		# The (maximum) dimensions of generated thumbnails
-		setting :thumbnail_dimensions, default: [ '100', '100' ] do |val|
+		setting :thumbnail_dimensions, default: '100x100' do |val|
 			val.split( 'x', 2 ).map( &:to_i )
 		end
 	end
