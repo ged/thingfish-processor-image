@@ -18,7 +18,7 @@ class Thingfish::Processor::Image < Thingfish::Processor
 
 
 	# Package version
-	VERSION = '0.1.1'
+	VERSION = '0.2.0'
 
 	# Version control revision
 	REVISION = %q$Revision$
@@ -28,13 +28,14 @@ class Thingfish::Processor::Image < Thingfish::Processor
 	log_to :thingfish
 
 	# Configurability API -- use the 'image_processor' section of the config
-	config_key :image_processor
+	configurability( 'thingfish.image_processor' ) do
 
+		# The (maximum) dimensions of generated thumbnails
+		setting :thumbnail_dimensions, default: [ '100', '100' ] do |val|
+			val.split( 'x', 2 ).map( &:to_i )
+		end
+	end
 
-	# The default dimensions of thumbnails
-	CONFIG_DEFAULTS = {
-		thumbnail_dimensions: '100x100',
-	}
 
 	# An array of mediatypes to ignore, even though ImageMagick claims it groks them
 	IGNORED_MIMETYPES = %w[
@@ -43,22 +44,6 @@ class Thingfish::Processor::Image < Thingfish::Processor
 		text/plain
 		text/x-server-parsed-html
 	]
-
-
-	##
-	# The (maximum) dimensions of generated thumbnails
-	singleton_attr_accessor :thumbnail_dimensions
-	@thumbnail_dimensions = [ 100, 100 ]
-
-
-	### Configurability API -- configure the processor with the :images section of
-	### the config.
-	def self::configure( config=nil )
-		config = self.defaults.merge( config || {} )
-
-		self.thumbnail_dimensions = config[:thumbnail_dimensions].split('x', 2).map( &:to_i )
-	end
-
 
 
 	#################################################################

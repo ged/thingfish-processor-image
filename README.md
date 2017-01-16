@@ -49,8 +49,8 @@ Here's an example configuration file that enables this plugin.
       processors:
         - image
     
-    images:
-      thumbnail_dimensions: 150x150
+		image_processor:
+		  thumbnail_dimensions: 150x150
 
 
 
@@ -70,7 +70,7 @@ and generate the API documentation.
 
 ## License
 
-Copyright (c) 2016, Michael Granger
+Copyright (c) 2016-2017, Michael Granger
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

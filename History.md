@@ -1,3 +1,8 @@
+## v0.2.0 [2016-11-16] Mahlon E. Smith <mahlon@martini.nu>
+
+Update for Configurability 3.x.
+
+
 ## v0.1.1 [2016-11-16] Michael Granger <ged@FaerieMUD.org>
 
 Build system fix only.
