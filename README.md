@@ -20,11 +20,6 @@ It extracts image-related metadata from uploaded media files, and generates one
 or more thumbnail images as related resources.
 
 
-## Authors
-
-* Michael Granger <ged@FaerieMUD.org>
-
-
 ## Installation
 
 This plugin relies on [ImageMagick](http://www.imagemagick.org/), so you'll
@@ -57,15 +52,20 @@ Here's an example configuration file that enables this plugin.
 ## Contributing
 
 You can check out the current development source with Mercurial via its
-{project page}[http://bitbucket.org/ged/thingfish-processor-image]. Or if you prefer Git, via 
-{its Github mirror}[https://github.com/ged/thingfish-processor-image].
+[project page](https://gitlab.com/ravngroup/open-source/ruby-zyre).
 
 After checking out the source, run:
 
-    $ rake newb
+    $ gem install -Ng
+    $ rake setup
 
-This task will install any missing dependencies, run the tests/specs,
-and generate the API documentation.
+This will install dependencies, and do any other necessary setup for
+development.
+
+
+## Authors
+
+* Michael Granger <ged@FaerieMUD.org>
 
 
 ## License

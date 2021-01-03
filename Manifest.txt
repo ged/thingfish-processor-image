@@ -2,7 +2,6 @@
 .editorconfig
 .rdoc_options
 .simplecov
-ChangeLog
 History.md
 LICENSE.txt
 Manifest.txt
